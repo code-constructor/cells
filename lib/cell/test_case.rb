@@ -62,10 +62,8 @@ module Cell
     module CommonTestMethods
       def setup
         @controller ||= Class.new(ActionController::Base).new
-        @request    ||= ::ActionController::TestRequest.new
-        @response   = ::ActionController::TestResponse.new
+        @request    ||= ::ActionController::TestRequest.create
         @controller.request = @request
-        @controller.response = @response
         @controller.params = {}
       end
 
